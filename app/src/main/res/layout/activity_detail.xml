@@ -1,59 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <ImageView
-        android:id="@+id/image_iv"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/sandwich_picture_content_description"
-        android:scaleType="centerCrop" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/origin_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_also_known_as_label"
-        android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/image_iv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_image_height"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/sandwich_picture_content_description"
+                android:scaleType="centerCrop" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_ingredients_label"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/detail_tb_padding"
+                android:paddingLeft="@dimen/detail_lr_padding"
+                android:paddingRight="@dimen/detail_lr_padding"
+                android:paddingBottom="@dimen/detail_tb_padding"
+                android:text="@string/detail_description_label"
+                android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_place_of_origin_label"
-        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/detail_tb_padding"
+                android:paddingLeft="@dimen/detail_lr_padding"
+                android:paddingRight="@dimen/detail_lr_padding"
+                android:paddingBottom="@dimen/detail_tb_padding" />
 
-    <TextView
-        android:id="@+id/description_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DDDDDD" />
 
-    <TextView
-        android:id="@+id/ingredients_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:shrinkColumns="0">
 
-    <TextView
-        android:id="@+id/also_known_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+                <TableRow
+                    android:layout_width="0dp"
+                    android:layout_weight="1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/detail_description_label"
-        android:textStyle="bold" />
-</FrameLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:paddingTop="@dimen/detail_tb_padding"
+                        android:paddingBottom="@dimen/detail_tb_padding"
+                        android:paddingRight="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingLeft="@dimen/detail_table_orgin_lr_padding"
+                        android:text="@string/detail_place_of_origin_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/origin_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:paddingRight="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingLeft="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingTop="@dimen/detail_tb_padding"
+                        android:paddingBottom="@dimen/detail_tb_padding" />
+                </TableRow>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#DDDDDD" />
+
+                <TableRow
+                    android:layout_width="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:paddingTop="@dimen/detail_tb_padding"
+                        android:paddingLeft="@dimen/detail_table_list_lr_padding"
+                        android:paddingRight="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingStart="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingEnd="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingBottom="@dimen/detail_tb_padding"
+                        android:text="@string/detail_ingredients_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:paddingTop="@dimen/detail_tb_padding"
+                        android:paddingRight="@dimen/detail_table_list_lr_padding"
+                        android:paddingLeft="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingStart="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingEnd="@dimen/detail_table_orgin_lr_padding"
+                        android:paddingBottom="@dimen/detail_tb_padding"
+                        android:text="@string/detail_also_known_as_label"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="0dp"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/ingredients_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:paddingTop="@dimen/detail_tb_padding"
+                        android:paddingBottom="@dimen/detail_tb_padding"
+                        android:paddingRight="@dimen/detail_table_list_lr_padding"
+                        android:paddingLeft="@dimen/detail_table_list_lr_padding" />
+
+                    <TextView
+                        android:id="@+id/also_known_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:paddingTop="@dimen/detail_tb_padding"
+                        android:paddingLeft="@dimen/detail_table_list_lr_padding"
+                        android:paddingRight="@dimen/detail_table_list_lr_padding"
+                        android:paddingBottom="@dimen/detail_tb_padding" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
